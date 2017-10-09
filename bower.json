@@ -1,0 +1,17 @@
+{
+  "name": "seapass-admin",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Steve Zaske <github@zaske.com>"
+  ],
+  "license": "MIT",
+  "homepage": "loc8r.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

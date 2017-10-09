@@ -6,6 +6,9 @@ import { PoiListComponent } from './poi-list/poi-list.component';
 import { PoiDetailComponent } from './poi-detail/poi-detail.component';
 import { PoiFormComponent } from './poi-form/poi-form.component';
 
+// Routing array 
+import { routing } from './app.routing';
+
 // For Firebase & Firestore DB
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -29,6 +32,7 @@ export const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
+    routing,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule
   ],

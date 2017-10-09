@@ -15,12 +15,14 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 // My API key imports
 import { masterFirebaseConfig } from './api-keys';
+import { PoiListItemComponent } from './poi-list-item/poi-list-item.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
   authDomain: masterFirebaseConfig.authDomain,
   databaseURL: masterFirebaseConfig.databaseURL,
-  storageBucket: masterFirebaseConfig.storageBucket
+  storageBucket: masterFirebaseConfig.storageBucket,
+  projectId: masterFirebaseConfig.projectId
 };
 
 @NgModule({
@@ -28,7 +30,8 @@ export const firebaseConfig = {
     AppComponent,
     PoiListComponent,
     PoiDetailComponent,
-    PoiFormComponent
+    PoiFormComponent,
+    PoiListItemComponent
   ],
   imports: [
     BrowserModule,

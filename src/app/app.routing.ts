@@ -26,7 +26,7 @@ const appRoutes: Routes = [
     component: PoiListComponent
   },
   {
-    path: 'poi/:id',
+    path: 'poi/:autoId',
     component: PoiDetailComponent
   }
 ];

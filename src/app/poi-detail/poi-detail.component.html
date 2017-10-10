@@ -1,3 +1,68 @@
-<p>
-  poi-detail works!
-</p>
+<div>
+    <h1>{{poi.name}}</h1>
+    <p> Lat: {{poi.latitude}}</p>
+</div>
+
+<div><button (click)="editFormVisable = !editFormVisable">Edit</button> <button (click)="onDeleteUnit()">Delete</button></div>
+
+<div *ngIf="editFormVisable" class="editForm panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Edit unit Details</h3>
+    </div>
+    <div class="panel-body">
+        <div>
+            <div>
+                <label>Name:</label>
+                <br>
+                <input value={{unit.name}} #editName>
+            </div>
+
+            <div>
+                <label>Mineral:</label>
+                <br>
+                <input value={{unit.mineral}} #editMineral>
+            </div>
+            <div>
+                <label>Vestpine:</label>
+                <br>
+                <input value={{unit.vespene}} #editVespene>
+            </div>
+            <div>
+                <label>Suply:</label>
+                <br>
+                <input value={{unit.supply}} #editSupply>
+            </div>
+            <div>
+                <label>build Time:</label>
+                <br>
+                <input value={{unit.buildTime}} #editBuildTime>
+            </div>
+            <div>
+                <label>Build From:</label>
+                <br>
+                <input value={{unit.buildFrom}} #editBuildFrom>
+            </div>
+            <div>
+                <label>Life:</label>
+                <br>
+                <input value={{unit.life}} #editLife>
+            </div>
+            <div>
+                <label>Energy:</label>
+                <br>
+                <input value={{unit.energy}} #editEnergy>
+            </div>
+            <div>
+                <label>Armor:</label>
+                <br>
+                <input value={{unit.armor}} #editArmor>
+            </div>
+            <div>
+                <label>Description:</label>
+                <br>
+                <textarea value={{unit.desc}} cols="120" rows="5" #editDesc></textarea>
+            </div>
+            <button (click)="onUpdateUnit(editName.value, editMineral.value, editVespene.value, editSupply.value, editBuildTime.value, editBuildFrom.value, editLife.value, editEnergy.value, editArmor.value, editDesc.value)">Update {{unit.name}}</button>
+        </div>
+    </div>
+</div>

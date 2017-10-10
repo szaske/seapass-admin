@@ -30,5 +30,13 @@ export class PoiService {
     return this.pois;
   }
 
+  // Returns an observable
+  getPoiByAutoId(poiId: string) {
+    return this.poiCollection.doc(poiId).snapshotChanges().map(item => {
+      const data = item.payload.data() as Poi;
+      const autoId = item.payload.id;
+      return {autoId, ...data}
+    })
+  } 
 
 }

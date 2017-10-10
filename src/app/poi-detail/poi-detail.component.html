@@ -1,68 +1,51 @@
 <div>
     <h1>{{poi.name}}</h1>
-    <p> Lat: {{poi.latitude}}</p>
 </div>
 
-<div><button (click)="editFormVisable = !editFormVisable">Edit</button> <button (click)="onDeleteUnit()">Delete</button></div>
-
-<div *ngIf="editFormVisable" class="editForm panel panel-default">
+<div class="editForm panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title">Edit unit Details</h3>
     </div>
     <div class="panel-body">
         <div>
             <div>
+                <label>AutoId:</label>
+                <br>
+                <input value={{poi.autoId}} #editAutoId>
+            </div>
+            <div>
                 <label>Name:</label>
                 <br>
-                <input value={{unit.name}} #editName>
+                <input value={{poi.name}} #editName>
             </div>
 
             <div>
-                <label>Mineral:</label>
+                <label>Latitude:</label>
                 <br>
-                <input value={{unit.mineral}} #editMineral>
+                <input value={{poi.latitude}} #editLatitude>
             </div>
             <div>
-                <label>Vestpine:</label>
+                <label>longitude:</label>
                 <br>
-                <input value={{unit.vespene}} #editVespene>
+                <input value={{poi.longitude}} #editLongitude>
             </div>
             <div>
-                <label>Suply:</label>
+                <label>Img_Url:</label>
                 <br>
-                <input value={{unit.supply}} #editSupply>
+                <input value={{poi.img_url}} #editImgUrl>
             </div>
             <div>
-                <label>build Time:</label>
+                <label>Tags:</label>
                 <br>
-                <input value={{unit.buildTime}} #editBuildTime>
-            </div>
-            <div>
-                <label>Build From:</label>
-                <br>
-                <input value={{unit.buildFrom}} #editBuildFrom>
-            </div>
-            <div>
-                <label>Life:</label>
-                <br>
-                <input value={{unit.life}} #editLife>
-            </div>
-            <div>
-                <label>Energy:</label>
-                <br>
-                <input value={{unit.energy}} #editEnergy>
-            </div>
-            <div>
-                <label>Armor:</label>
-                <br>
-                <input value={{unit.armor}} #editArmor>
+                <input value={{poi.tags}} #editTags>
             </div>
             <div>
                 <label>Description:</label>
                 <br>
-                <textarea value={{unit.desc}} cols="120" rows="5" #editDesc></textarea>
+                <textarea value={{poi.description}} cols="120" rows="5" #editDesc></textarea>
             </div>
-            <button (click)="onUpdateUnit(editName.value, editMineral.value, editVespene.value, editSupply.value, editBuildTime.value, editBuildFrom.value, editLife.value, editEnergy.value, editArmor.value, editDesc.value)">Update {{unit.name}}</button>
+            <button (click)="UpdatePOI(editName.value, editDesc.value, editLatitude.value, editLongitude.value, editImgUrl.value, editTags.value, editAutoId.value)">Update POI</button>
+            <button class="btn-danger" (click)="onDeleteUnit()">Delete</button>
         </div>
     </div>
 </div>

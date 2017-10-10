@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Poi } from '../poi';
-import { Router } from '@angular/router';
 import { PoiService } from '../poi.service';
 import { Observable } from 'rxjs/Observable';
 
@@ -16,7 +15,7 @@ export class PoiListComponent implements OnInit {
   // Variables
   pois;
 
-  constructor(private router: Router, private poiService: PoiService) { }
+  constructor(private poiService: PoiService) { }
 
   ngOnInit() {
     this.pois = this.poiService.getPois();

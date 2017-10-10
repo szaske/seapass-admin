@@ -1,20 +1,16 @@
 <section class="unitList">
-    Terran Roster, for "Legacy of the Void" era.<br><br>
+    Terran Roster, for "Legacy of the V<br><br>
     <div class="divTable">
         <div class="divTableBody">
             <div class="divTableRow">
-                <div class="divTableCell">img</div>
+                <div class="divTableCell">AutoId</div>
                 <div class="divTableCell">Name</div>
-                <div class="divTableCell">Mineral</div>
-                <div class="divTableCell">Vespene</div>
-                <div class="divTableCell">Supply</div>
-                <div class="divTableCell">Build Time</div>
-                <div class="divTableCell">Build From</div>
-                <div class="divTableCell">Life</div>
-                <div class="divTableCell">Energy</div>
-                <div class="divTableCell">Armor</div>
+                <div class="divTableCell">Lat</div>
+                <div class="divTableCell">Long</div>
+                <div class="divTableCell">Tags</div>
+                <div class="divTableCell">Image URL</div>
             </div>
-            <app-poi-list-item [poi]="poi" class="unitRow divTableRow" *ngFor="let poi of pois | async" (click)="seeDetails(poi)"></app-poi-list-item>
+            <app-poi-list-item [poi]="poi" class="unitRow divTableRow" *ngFor="let poi of pois | async"></app-poi-list-item>
         </div>
     </div>
 </section>

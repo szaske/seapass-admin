@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-poi-list-item',
@@ -8,9 +9,12 @@ import { Component, Input, OnInit } from '@angular/core';
 export class PoiListItemComponent implements OnInit {
  
   @Input() poi;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  poiDetails(passedObject) {
+    this.router.navigate(['poi', passedObject.autoId]);
+  }
 }

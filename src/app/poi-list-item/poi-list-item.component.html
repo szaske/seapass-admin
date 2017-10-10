@@ -1,5 +1,7 @@
-<div class="divTableCell unit">&nbsp;</div>
+<div class="divTableCell">{{poi.autoId}}</div>
 <div class="divTableCell">{{poi.name}}</div>
 <div class="divTableCell">{{poi.latitude}}</div>
 <div class="divTableCell">{{poi.longitude}}</div>
-<div class="buttonDiv"><button>DETAILS</button></div>
+<div class="divTableCell">{{poi.tags}}</div>
+<div class="divTableCell"><a href="{{poi.img_url}}">link</a></div>
+<div class="buttonDiv"><button (click)="poiDetails(poi)">DETAILS</button></div>

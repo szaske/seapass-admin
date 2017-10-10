@@ -24,11 +24,11 @@ const appRoutes: Routes = [
   {
     path: 'list',
     component: PoiListComponent
+  },
+  {
+    path: 'poi/:id',
+    component: PoiDetailComponent
   }
-//   {
-//     path: 'units/:id',
-//     component: UnitDetailComponent
-//   }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

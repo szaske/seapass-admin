@@ -1,5 +1,25 @@
+<div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="poiService">
+
+        <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+        </ng-container>
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>
+
+
+
 <section class="unitList">
-    Terran Roster, for "Legacy of the V<br><br>
+    Seattle Passport Admin<br><br>
     <div class="divTable">
         <div class="divTableBody">
             <div class="divTableRow">

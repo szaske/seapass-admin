@@ -1,3 +1,46 @@
-<p>
-  poi-form works!
-</p>
+<div class="newForm panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Edit unit Details</h3>
+    </div>
+    <div class="panel-body">
+        <div>
+            <div>
+                <label>AutoId:</label>
+                <br>
+                <input #newAutoId>
+            </div>
+            <div>
+                <label>Name:</label>
+                <br>
+                <input #newName>
+            </div>
+
+            <div>
+                <label>Latitude:</label>
+                <br>
+                <input #newLatitude>
+            </div>
+            <div>
+                <label>longitude:</label>
+                <br>
+                <input #newLongitude>
+            </div>
+            <div>
+                <label>Img_Url:</label>
+                <br>
+                <input #newImgUrl>
+            </div>
+            <div>
+                <label>Tags:</label>
+                <br>
+                <input #newTags>
+            </div>
+            <div>
+                <label>Description:</label>
+                <br>
+                <textarea cols="120" rows="5" #newDesc></textarea>
+            </div>
+            <button (click)="submitForm(newName.value, newDesc.value, newLatitude.value, newLongitude.value, newImgUrl.value, newTags.value, newAutoId)">Add New POI</button>
+        </div>
+    </div>
+</div>

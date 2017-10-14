@@ -68,4 +68,8 @@ export class PoiDetailComponent implements OnInit {
         editAutoId);
     this.poiService.updatePoi(updatedPOI);   
   }
+
+  DeletePoi(poiIDToDelete: string){
+    //code here
+  }
 }

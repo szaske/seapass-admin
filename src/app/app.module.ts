@@ -17,6 +17,10 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { masterFirebaseConfig } from './api-keys';
 import { PoiListItemComponent } from './poi-list-item/poi-list-item.component';
 
+// New UI modules
+import { MaterialModule } from './material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
   authDomain: masterFirebaseConfig.authDomain,
@@ -37,7 +41,9 @@ export const firebaseConfig = {
     BrowserModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    MaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

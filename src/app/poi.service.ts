@@ -10,6 +10,8 @@ export class PoiService {
 
   poiCollection: AngularFirestoreCollection<Poi>;
   pois: Observable<Poi[]>;
+  poisTest: Observable<any[]>;
+  PAGE_SIZE = 10;
 
   constructor(private database: AngularFirestore) {
     // This is a db reference, not data
@@ -24,10 +26,31 @@ export class PoiService {
       const autoId = change.payload.doc.id;
       return {autoId, ...data}
     })}) 
+
+    this.poisTest = this.poiCollection.snapshotChanges();
   }
 
-   getPois() {
+  getPois() {
     return this.pois;
+  }
+
+  // Required to get Material Tables to work
+  connect():Observable<any[]> {
+    return this.poisTest;
+  }
+
+
+  // addUnit(newUnit: Unit) {
+  //   this.units.push(newUnit);
+  // }
+
+  addPOI(poi: Poi) {
+      this.poiCollection.add({name: poi.name,
+        description: poi.description,
+        latitude: poi.latitude,
+        longitude: poi.longitude,
+        img_url: poi.img_url,
+        tags: poi.tags});
   }
 
   // Returns an observable

@@ -45,7 +45,7 @@
                 <textarea value={{poi.description}} cols="120" rows="5" #editDesc></textarea>
             </div>
             <button (click)="UpdatePOI(editName.value, editDesc.value, editLatitude.value, editLongitude.value, editImgUrl.value, editTags.value, editAutoId.value)">Update POI</button>
-            <button class="btn-danger" (click)="onDeleteUnit()">Delete</button>
+            <button class="btn-danger" (click)="DeletePoi(poi.autoId)">Delete</button>
         </div>
     </div>
 </div>
